@@ -1,10 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
   scroll-behavior: smooth;
-  font-family: "Poppins";
+  font-family: "Inter", sans-serif; /* Updated font to Inter */
 }
 :root {
   --bg-color: #0d0f0f; /* Dark background for a modern feel */
@@ -41,17 +43,37 @@ body {
   color: var(--main-color);
   display: none;
 }
-.logo {
-  font-size: 3rem;
-  color: var(--text-color);
-  font-weight: 800;
-  cursor: pointer;
-  transition: 0.3s ease-in-out;
-  animation: fadeInLogo 1.5s ease-in-out; /* Fade-in animation for logo */
+
+/* Basic styling for the logo */
+
+.logo img {
+  animation: textureAnimation 2s ease infinite;
+  width: 20px; /* Adjust the size as needed */
+  height: auto;
 }
-.logo:hover {
-  transform: scale(1.1);
+
+@keyframes textureAnimation {
+  0% {
+    transform: scale(1);
+    filter: brightness(100%);
+  }
+  50% {
+    transform: scale(1.1);
+    filter: brightness(120%) contrast(150%);
+  }
+  100% {
+    transform: scale(1);
+    filter: brightness(100%);
+  }
 }
+
+
+.logo img:hover {
+  animation: textureAnimation 0.5s ease-out; /* Faster animation on hover */
+}
+
+
+
 span {
   background: linear-gradient(270deg, #a7e8c5 10%, #6cd7b4 100%); /* Green gradient */
   background-clip: text;
@@ -113,7 +135,7 @@ section {
   font-size: 4rem;
 }
 .home-content p {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 500;
   max-width: 500px;
   line-height: 1.8;
@@ -200,7 +222,7 @@ section {
   text-align: left;
 }
 .about-content p {
-  font-size: 1.8rem;
+  font-size: 2rem;
 }
 .about-content .btn {
   margin: 3rem 0;
@@ -565,5 +587,32 @@ section {
   }
   .contact form .input-group-2 textarea {
     padding: 1.5rem;
+  }
+}
+
+
+#typing-effect {
+  font-size: 3rem;
+  font-weight: 600;
+  color: white;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid var(--main-color); /* The cursor effect */
+  animation: blink 0.75s step-end infinite;
+}
+
+/* Gradient for the changing text */
+.gradient-text {
+  background: linear-gradient(270deg, #a7e8c5 10%, #6cd7b4 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent; /* Text color is transparent, but the gradient will be visible */
+}
+
+/* Cursor blinking effect */
+@keyframes blink {
+  50% {
+    border-color: transparent;
   }
 }
