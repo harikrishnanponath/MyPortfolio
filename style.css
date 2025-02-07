@@ -58,7 +58,7 @@ body {
     filter: brightness(100%);
   }
   50% {
-    transform: scale(1.1);
+    transform: scale(1.2);
     filter: brightness(120%) contrast(150%);
   }
   100% {
