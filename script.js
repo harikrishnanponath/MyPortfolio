@@ -68,3 +68,29 @@ document.addEventListener('DOMContentLoaded', () => {
   // Start typing the first phrase
   type();
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  particlesJS("particles-js", {
+    particles: {
+      number: { value: 120, density: { enable: true, value_area: 1000 } },
+      color: { value: "#00f5d4" }, 
+      shape: { type: "circle" },
+      opacity: { value: 0.6, random: false },
+      size: { value: 3, random: true },
+      line_linked: { enable: true, distance: 100, color: "#00f5d4", opacity: 0.6, width: 1 },
+      move: { enable: true, speed: 2, direction: "none", out_mode: "out" }
+    },
+    interactivity: {
+      events: {
+        onhover: { enable: true, mode: "grab" }, 
+        onclick: { enable: true, mode: "repulse" }
+      },
+      modes: {
+        grab: { distance: 200, line_linked: { opacity: 1 } },
+        repulse: { distance: 120, duration: 0.4 }
+      }
+    },
+    retina_detect: true
+  });
+});
+
