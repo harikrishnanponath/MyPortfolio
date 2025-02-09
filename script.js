@@ -94,3 +94,20 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+
+document.addEventListener("DOMContentLoaded", () => {
+  const splashScreen = document.getElementById("splash-screen");
+  const mainContent = document.getElementById("main-content");
+  const android = document.getElementById("android-logo");
+
+  android.addEventListener("click", () => {
+    // 🔥 Scroll to the top before showing the main content
+    window.scrollTo({ top: 0, behavior: "instant" });
+
+    splashScreen.style.opacity = "0"; // Fade out
+    setTimeout(() => {
+      splashScreen.style.display = "none"; // Hide splash screen
+      mainContent.style.display = "block"; // Show main content
+    }, 1000); // Matches the CSS transition time
+  });
+});
