@@ -111,3 +111,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 1000); // Matches the CSS transition time
   });
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const enterText = document.getElementById("enter-text");
+
+  // Check if the user is on a mobile device
+  if (/Mobi|Android/i.test(navigator.userAgent)) {
+    enterText.textContent = "Touch Me"; // Change text for mobile
+  } else {
+    enterText.textContent = "Click Me"; // Keep text for desktop
+  }
+});
